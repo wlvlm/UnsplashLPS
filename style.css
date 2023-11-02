@@ -40,6 +40,22 @@ form input{
     box-shadow: 0 5px 6px rgba(0, 0, 0, 0.3);
 }
 
-.target-image{
+.input-2{
+    width: auto;
+    margin: auto;
+    
+}
+
+.imgContainer{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 8px;
+    grid-row-gap: 8px;
+}
+
+img{
     width: 40vw;
+    aspect-ratio: 1;
+    object-fit: cover;
 }
