@@ -3,6 +3,7 @@ import ACCESS_KEY from "./config.js"
 
 const form = document.querySelector('.form')
 const input = document.querySelector('.input')
+const img = document.querySelectorAll('.target-image')
 
 form.addEventListener("submit", (e) => {
     e.preventDefault()
@@ -20,9 +21,14 @@ async function fetchData(value) {
             throw new Error('Erreur')
         }
         const data = await response.json()
-        // displayData(data)
-        console.log(data)
+        displayData(data)
     } catch (error) {
         console.log('Une erreur est survenue')
     }
+}
+
+function displayData(data){
+    data.results.forEach((element, index) => {
+        img[index].src = element[index].urls.regular
+    })
 }
